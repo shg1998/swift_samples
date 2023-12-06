@@ -37,6 +37,30 @@ struct AnimalDetailView: View {
                     HeadingView(headingImage: "photo.on.rectangle.angled", headingText: "Wilderness in Pictures")
                     InsetGalleryView(animal: animal)
                 }.padding(.horizontal)
+                
+                Group {
+                    HeadingView(headingImage: "questionmark.circle", headingText: "Did you know?!")
+                    InsetFactView(animal: animal)
+                }.padding(.horizontal)
+                
+                Group {
+                    HeadingView(headingImage: "info.circle", headingText: "All about \(animal.name)")
+                    Text(animal.description)
+                        .multilineTextAlignment(.leading)
+                        .layoutPriority(1)
+                }
+                .padding(.horizontal)
+                
+                Group {
+                    HeadingView(headingImage: "map", headingText: "National Parks")
+                    InsetMapView()
+                }.padding(.horizontal)
+                
+                Group {
+                    HeadingView(headingImage: "books.vertical", headingText: "Learn more")
+                    ExternalWeblinkView(animal: animal)
+                }
+                .padding(.horizontal)
             }//: VStack
             .navigationBarTitle("Learn about \(animal.name)",displayMode: .inline)
         }//: ScrollView
