@@ -17,5 +17,3 @@ struct Animal: Codable,Identifiable{
     let gallery: [String]
     let fact: [String]
 }
-
-
